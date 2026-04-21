@@ -616,10 +616,10 @@
         </div>
 
         <div class="module-tabs">
-            <button class="tab-btn active" data-module="1">🏛️ Módulo 1 • Fundamentos</button>
-            <button class="tab-btn" data-module="2">📖 Módulo 2 • Aristóteles</button>
-            <button class="tab-btn" data-module="3">🍃 Módulo 3 • Outras Perspectivas</button>
-            <button class="tab-btn" data-module="4">📱 Módulo 4 • Preço da Conexão</button>
+            <button class="tab-btn active" data-module="1" onclick="irParaModulo(1)">🏛️ Módulo 1 • Fundamentos</button>
+            <button class="tab-btn" data-module="2" onclick="irParaModulo(2)">📖 Módulo 2 • Aristóteles</button>
+            <button class="tab-btn" data-module="3" onclick="irParaModulo(3)">🍃 Módulo 3 • Outras Perspectivas</button>
+            <button class="tab-btn" data-module="4" onclick="irParaModulo(4)">📱 Módulo 4 • Preço da Conexão</button>
         </div>
 
         <!-- MÓDULO 1 -->
@@ -644,7 +644,7 @@
                     <iframe src="https://www.youtube.com/embed/nAXPq4g07vI" title="Clóvis de Barros" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <p>Nesta aula, o Prof. Clóvis de Barros Filho apresenta a filosofia moral grega.</p>
-                <button class="complete-btn" onclick="marcarAssistido(1, 1)">📌 Marcar como assistido</button>
+                <button class="complete-btn" data-video="1" data-modulo="1" onclick="marcarAssistido(1, 1)">📌 Marcar como assistido</button>
             </div>
 
             <div class="content-card">
@@ -670,21 +670,21 @@
                 <div class="quiz-container" id="quiz1">
                     <div class="quiz-question" data-correct="a">
                         <p>1. Qual é o método utilizado por Sócrates para "dar à luz" ideias verdadeiras?</p>
-                        <label class="quiz-option"><input type="radio" name="q1" value="a"> a) Maiêutica</label>
-                        <label class="quiz-option"><input type="radio" name="q1" value="b"> b) Sofisma</label>
-                        <label class="quiz-option"><input type="radio" name="q1" value="c"> c) Dialética negativa</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod1" value="a"> a) Maiêutica</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod1" value="b"> b) Sofisma</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod1" value="c"> c) Dialética negativa</label>
                     </div>
                     <div class="quiz-question" data-correct="c">
                         <p>2. Para Platão, a justiça na alma e na cidade é:</p>
-                        <label class="quiz-option"><input type="radio" name="q2" value="a"> a) O poder do mais forte</label>
-                        <label class="quiz-option"><input type="radio" name="q2" value="b"> b) A busca pelo prazer</label>
-                        <label class="quiz-option"><input type="radio" name="q2" value="c"> c) A harmonia entre as partes</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod1" value="a"> a) O poder do mais forte</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod1" value="b"> b) A busca pelo prazer</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod1" value="c"> c) A harmonia entre as partes</label>
                     </div>
                     <div class="quiz-question" data-correct="b">
                         <p>3. A Alegoria da Caverna de Platão é uma metáfora sobre:</p>
-                        <label class="quiz-option"><input type="radio" name="q3" value="a"> a) O poder político</label>
-                        <label class="quiz-option"><input type="radio" name="q3" value="b"> b) A educação e o conhecimento</label>
-                        <label class="quiz-option"><input type="radio" name="q3" value="c"> c) A vida após a morte</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod1" value="a"> a) O poder político</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod1" value="b"> b) A educação e o conhecimento</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod1" value="c"> c) A vida após a morte</label>
                     </div>
                     <button class="btn-quiz" onclick="verificarQuiz(1)">✅ Verificar respostas</button>
                     <div id="quiz1Feedback" class="quiz-feedback" style="display:none;"></div>
@@ -718,7 +718,8 @@
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/g87MnKQk5j4" title="Clóvis de Barros - Ética e Virtude" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <button class="complete-btn" onclick="marcarAssistido(2, 2)">📌 Marcar como assistido</button>
+                <p>O Prof. Clóvis de Barros Filho introduz os conceitos fundamentais da ética aristotélica.</p>
+                <button class="complete-btn" data-video="2" data-modulo="2" onclick="marcarAssistido(2, 2)">📌 Marcar como assistido</button>
             </div>
 
             <div class="content-card">
@@ -767,9 +768,9 @@
                     <h3>📱 Situação: Mensagens durante o jantar</h3>
                     <p>Você está em um jantar em família e seu celular vibra com notificações. Qual atitude representa o JUSTO MEIO?</p>
                     <div class="mini-opcoes">
-                        <div class="mini-opcao" onclick="responderMiniSimulador(this, 'falta')"><strong>❌ Isolamento</strong><br>Ignorar completamente</div>
-                        <div class="mini-opcao" onclick="responderMiniSimulador(this, 'justoMeio')"><strong>✨ Equilíbrio</strong><br>Perceber, mas finalizar a refeição</div>
-                        <div class="mini-opcao" onclick="responderMiniSimulador(this, 'excesso')"><strong>⚠️ Excesso</strong><br>Abandonar a conversa para responder</div>
+                        <div class="mini-opcao" data-tipo="falta" onclick="responderMiniSimulador(this, 'falta')"><strong>❌ Isolamento</strong><br>Ignorar completamente</div>
+                        <div class="mini-opcao" data-tipo="justoMeio" onclick="responderMiniSimulador(this, 'justoMeio')"><strong>✨ Equilíbrio</strong><br>Perceber, mas finalizar a refeição</div>
+                        <div class="mini-opcao" data-tipo="excesso" onclick="responderMiniSimulador(this, 'excesso')"><strong>⚠️ Excesso</strong><br>Abandonar a conversa para responder</div>
                     </div>
                     <div id="miniFeedback" class="mini-feedback"></div>
                 </div>
@@ -780,21 +781,21 @@
                 <div class="quiz-container" id="quiz2">
                     <div class="quiz-question" data-correct="b">
                         <p>1. O que significa Eudaimonia para Aristóteles?</p>
-                        <label class="quiz-option"><input type="radio" name="q1" value="a"> a) Prazer momentâneo</label>
-                        <label class="quiz-option"><input type="radio" name="q1" value="b"> b) Florescimento humano</label>
-                        <label class="quiz-option"><input type="radio" name="q1" value="c"> c) Riqueza e poder</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod2" value="a"> a) Prazer momentâneo</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod2" value="b"> b) Florescimento humano</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod2" value="c"> c) Riqueza e poder</label>
                     </div>
                     <div class="quiz-question" data-correct="a">
                         <p>2. O Justo Meio (Mesotes) é:</p>
-                        <label class="quiz-option"><input type="radio" name="q2" value="a"> a) Equilíbrio entre excesso e falta</label>
-                        <label class="quiz-option"><input type="radio" name="q2" value="b"> b) Média aritmética</label>
-                        <label class="quiz-option"><input type="radio" name="q2" value="c"> c) Prazer máximo</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod2" value="a"> a) Equilíbrio entre excesso e falta</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod2" value="b"> b) Média aritmética</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod2" value="c"> c) Prazer máximo</label>
                     </div>
                     <div class="quiz-question" data-correct="c">
                         <p>3. O que é Phronesis?</p>
-                        <label class="quiz-option"><input type="radio" name="q3" value="a"> a) Conhecimento teórico</label>
-                        <label class="quiz-option"><input type="radio" name="q3" value="b"> b) Técnica de argumentação</label>
-                        <label class="quiz-option"><input type="radio" name="q3" value="c"> c) Sabedoria prática</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod2" value="a"> a) Conhecimento teórico</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod2" value="b"> b) Técnica de argumentação</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod2" value="c"> c) Sabedoria prática</label>
                     </div>
                     <button class="btn-quiz" onclick="verificarQuiz(2)">✅ Verificar respostas</button>
                     <div id="quiz2Feedback" class="quiz-feedback" style="display:none;"></div>
@@ -828,13 +829,15 @@
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/FPL-QBnLhBE" title="Clóvis de Barros - Epicurismo" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <button class="complete-btn" onclick="marcarAssistido(3, 3)">📌 Marcar como assistido</button>
+                <p>Epicurismo e estoicismo: duas escolas helenísticas que oferecem caminhos para a felicidade.</p>
+                <button class="complete-btn" data-video="3" data-modulo="3" onclick="marcarAssistido(3, 3)">📌 Marcar como assistido</button>
             </div>
 
             <div class="content-card">
                 <div class="card-title">🍃 Epicuro (341-271 a.C.)</div>
                 <div class="quote-card">
-                    <div class="quote-text">⚡ Não há o que temer quanto aos deuses.<br>⚡ Não há nada a temer quanto à morte.</div>
+                    <div class="quote-text">⚡ Não há o que temer quanto aos deuses.<br>⚡ Não há nada a temer quanto à morte.<br>⚡ Pode-se alcançar a felicidade.<br>⚡ Pode-se suportar a dor.</div>
+                    <div class="quote-author">— Tetraphármakon epicurista</div>
                 </div>
             </div>
 
@@ -873,21 +876,21 @@
                 <div class="quiz-container" id="quiz3">
                     <div class="quiz-question" data-correct="a">
                         <p>1. O Tetraphármakon epicurista é:</p>
-                        <label class="quiz-option"><input type="radio" name="q1" value="a"> a) Quádruplo remédio para a alma</label>
-                        <label class="quiz-option"><input type="radio" name="q1" value="b"> b) Tratado político</label>
-                        <label class="quiz-option"><input type="radio" name="q1" value="c"> c) Manual de guerra</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod3" value="a"> a) Quádruplo remédio para a alma</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod3" value="b"> b) Tratado político</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod3" value="c"> c) Manual de guerra</label>
                     </div>
                     <div class="quiz-question" data-correct="b">
                         <p>2. Para Hobbes, o estado de natureza é:</p>
-                        <label class="quiz-option"><input type="radio" name="q2" value="a"> a) Paz e harmonia</label>
-                        <label class="quiz-option"><input type="radio" name="q2" value="b"> b) Guerra de todos contra todos</label>
-                        <label class="quiz-option"><input type="radio" name="q2" value="c"> c) Paraíso terrestre</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod3" value="a"> a) Paz e harmonia</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod3" value="b"> b) Guerra de todos contra todos</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod3" value="c"> c) Paraíso terrestre</label>
                     </div>
                     <div class="quiz-question" data-correct="c">
                         <p>3. Para Rousseau, o homem nasce:</p>
-                        <label class="quiz-option"><input type="radio" name="q3" value="a"> a) Mau</label>
-                        <label class="quiz-option"><input type="radio" name="q3" value="b"> b) Neutro</label>
-                        <label class="quiz-option"><input type="radio" name="q3" value="c"> c) Bom</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod3" value="a"> a) Mau</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod3" value="b"> b) Neutro</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod3" value="c"> c) Bom</label>
                     </div>
                     <button class="btn-quiz" onclick="verificarQuiz(3)">✅ Verificar respostas</button>
                     <div id="quiz3Feedback" class="quiz-feedback" style="display:none;"></div>
@@ -900,7 +903,7 @@
             </div>
         </div>
 
-        <!-- MÓDULO 4: O PREÇO DA CONEXÃO -->
+        <!-- MÓDULO 4 -->
         <div id="module4" class="module-content">
             <div class="content-card">
                 <div class="learning-objectives">
@@ -923,7 +926,7 @@
                     <iframe src="https://www.youtube.com/embed/uaaC57tcci0" title="O Dilema das Redes" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <p>Este documentário da Netflix revela como as redes sociais foram projetadas para viciar.</p>
-                <button class="complete-btn" onclick="marcarAssistido(4, 4)">📌 Marcar como assistido</button>
+                <button class="complete-btn" data-video="4" data-modulo="4" onclick="marcarAssistido(4, 4)">📌 Marcar como assistido</button>
             </div>
 
             <div class="content-card">
@@ -957,9 +960,9 @@
                 <table class="virtue-table">
                     <thead><tr><th>Infância Antes (até 2010)</th><th>Infância Depois (2010-2015)</th></tr></thead>
                     <tbody>
-                        <tr><td>Brincar na rua com amigos</td><td style="color: var(--warning);">Ficar no quarto com o celular</td></tr>
-                        <tr><td>Conversas presenciais</td><td style="color: var(--warning);">Mensagens de texto</td></tr>
-                        <tr><td>Conflitos resolvidos pessoalmente</td><td style="color: var(--warning);">Cyberbullying e cancelamento</td></tr>
+                        <tr><td style="color:var(--gold)">Brincar na rua com amigos</td><td style="color: var(--warning);">Ficar no quarto com o celular</td></tr>
+                        <tr><td style="color:var(--gold)">Conversas presenciais</td><td style="color: var(--warning);">Mensagens de texto</td></tr>
+                        <tr><td style="color:var(--gold)">Conflitos resolvidos pessoalmente</td><td style="color: var(--warning);">Cyberbullying e cancelamento</td></tr>
                     </tbody>
                 </table>
                 <p><strong>Os quatro danos fundamentais:</strong> Privação social, Privação de sono, Fragmentação da atenção, Vício</p>
@@ -979,15 +982,15 @@
                 <table class="virtue-table">
                     <thead><tr><th style="background: #e74c3c;">Meninas</th><th style="background: #3498db;">Meninos</th></tr></thead>
                     <tbody>
-                        <tr><td>Mais afetadas pela comparação social</td><td>Mais atraídos por jogos e pornografia</td></tr>
-                        <tr><td>Maior impacto na ansiedade e depressão</td><td>Maior risco de isolamento físico</td></tr>
+                        <tr><td style="color:#f28b82">Mais afetadas pela comparação social</td><td style="color:#f28b82">Mais atraídos por jogos e pornografia</td></tr>
+                        <tr><td style="color:#f28b82">Maior impacto na ansiedade e depressão</td><td style="color:#f28b82">Maior risco de isolamento físico</td></tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="content-card">
                 <div class="card-title">💡 O que fazer? Propostas de Jonathan Haidt</div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 20px 0;">
                     <div style="background: var(--bg-light); border-radius: 16px; padding: 16px; text-align: center;">📵 Nada de smartphones antes dos 14 anos</div>
                     <div style="background: var(--bg-light); border-radius: 16px; padding: 16px; text-align: center;">📱 Nada de redes sociais antes dos 16 anos</div>
                     <div style="background: var(--bg-light); border-radius: 16px; padding: 16px; text-align: center;">🏫 Escolas sem celular</div>
@@ -1007,9 +1010,9 @@
                     <h3>📱 DESAFIO: 24 horas sem celular</h3>
                     <p>Como você se sentiria?</p>
                     <div class="mini-opcoes">
-                        <div class="mini-opcao" onclick="responderMiniSimuladorTela(this, 'ansiedade')"><strong>😰 Ansiedade</strong><br>"Fico nervoso só de pensar"</div>
-                        <div class="mini-opcao" onclick="responderMiniSimuladorTela(this, 'curiosidade')"><strong>🤔 Curiosidade</strong><br>"Seria um experimento interessante"</div>
-                        <div class="mini-opcao" onclick="responderMiniSimuladorTela(this, 'alivio')"><strong>😌 Alívio</strong><br>"Seria um descanso!"</div>
+                        <div class="mini-opcao" data-tipo="ansiedade" onclick="responderMiniSimuladorTela(this, 'ansiedade')"><strong>😰 Ansiedade</strong><br>"Fico nervoso só de pensar"</div>
+                        <div class="mini-opcao" data-tipo="curiosidade" onclick="responderMiniSimuladorTela(this, 'curiosidade')"><strong>🤔 Curiosidade</strong><br>"Seria um experimento interessante"</div>
+                        <div class="mini-opcao" data-tipo="alivio" onclick="responderMiniSimuladorTela(this, 'alivio')"><strong>😌 Alívio</strong><br>"Seria um descanso!"</div>
                     </div>
                     <div id="miniFeedbackTela" class="mini-feedback"></div>
                 </div>
@@ -1020,33 +1023,33 @@
                 <div class="quiz-container" id="quiz4">
                     <div class="quiz-question" data-correct="b">
                         <p>1. Segundo Jonathan Haidt, o que caracteriza a "infância baseada no telefone"?</p>
-                        <label class="quiz-option"><input type="radio" name="q1" value="a"> a) Mais brincadeiras na rua</label>
-                        <label class="quiz-option"><input type="radio" name="q1" value="b"> b) Ficar no quarto com o celular</label>
-                        <label class="quiz-option"><input type="radio" name="q1" value="c"> c) Mais tempo com a família</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod4" value="a"> a) Mais brincadeiras na rua</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod4" value="b"> b) Ficar no quarto com o celular</label>
+                        <label class="quiz-option"><input type="radio" name="q1_mod4" value="c"> c) Mais tempo com a família</label>
                     </div>
                     <div class="quiz-question" data-correct="c">
                         <p>2. Sherry Turkle alerta que estamos perdendo:</p>
-                        <label class="quiz-option"><input type="radio" name="q2" value="a"> a) Habilidade de digitar rápido</label>
-                        <label class="quiz-option"><input type="radio" name="q2" value="b"> b) Capacidade de usar aplicativos</label>
-                        <label class="quiz-option"><input type="radio" name="q2" value="c"> c) Empatia e conversas presenciais</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod4" value="a"> a) Habilidade de digitar rápido</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod4" value="b"> b) Capacidade de usar aplicativos</label>
+                        <label class="quiz-option"><input type="radio" name="q2_mod4" value="c"> c) Empatia e conversas presenciais</label>
                     </div>
                     <div class="quiz-question" data-correct="a">
                         <p>3. Qual NÃO é um dos quatro danos fundamentais de Haidt?</p>
-                        <label class="quiz-option"><input type="radio" name="q3" value="a"> a) Aumento da criatividade</label>
-                        <label class="quiz-option"><input type="radio" name="q3" value="b"> b) Privação social</label>
-                        <label class="quiz-option"><input type="radio" name="q3" value="c"> c) Privação de sono</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod4" value="a"> a) Aumento da criatividade</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod4" value="b"> b) Privação social</label>
+                        <label class="quiz-option"><input type="radio" name="q3_mod4" value="c"> c) Privação de sono</label>
                     </div>
                     <div class="quiz-question" data-correct="b">
                         <p>4. Como as meninas são mais afetadas pelas redes sociais?</p>
-                        <label class="quiz-option"><input type="radio" name="q4" value="a"> a) Por jogos online</label>
-                        <label class="quiz-option"><input type="radio" name="q4" value="b"> b) Pela comparação social</label>
-                        <label class="quiz-option"><input type="radio" name="q4" value="c"> c) Por vídeos curtos</label>
+                        <label class="quiz-option"><input type="radio" name="q4_mod4" value="a"> a) Por jogos online</label>
+                        <label class="quiz-option"><input type="radio" name="q4_mod4" value="b"> b) Pela comparação social</label>
+                        <label class="quiz-option"><input type="radio" name="q4_mod4" value="c"> c) Por vídeos curtos</label>
                     </div>
                     <div class="quiz-question" data-correct="b">
                         <p>5. Qual é uma das propostas de Jonathan Haidt?</p>
-                        <label class="quiz-option"><input type="radio" name="q5" value="a"> a) Mais tempo em redes sociais</label>
-                        <label class="quiz-option"><input type="radio" name="q5" value="b"> b) Escolas sem celular</label>
-                        <label class="quiz-option"><input type="radio" name="q5" value="c"> c) Smartphones para crianças de 10 anos</label>
+                        <label class="quiz-option"><input type="radio" name="q5_mod4" value="a"> a) Mais tempo em redes sociais</label>
+                        <label class="quiz-option"><input type="radio" name="q5_mod4" value="b"> b) Escolas sem celular</label>
+                        <label class="quiz-option"><input type="radio" name="q5_mod4" value="c"> c) Smartphones para crianças de 10 anos</label>
                     </div>
                     <button class="btn-quiz" onclick="verificarQuiz(4)">✅ Verificar respostas</button>
                     <div id="quiz4Feedback" class="quiz-feedback" style="display:none;"></div>
@@ -1070,6 +1073,7 @@
     </footer>
 
     <script>
+        // Nome do usuário
         const usuarioNome = localStorage.getItem('usuario_nome') || 'Estudante';
         document.getElementById('userName').innerHTML = `👤 ${usuarioNome}`;
 
@@ -1077,30 +1081,46 @@
             window.location.href = '/login/';
         }
 
+        // ============================================
+        // FUNÇÕES DE NAVEGAÇÃO ENTRE MÓDULOS
+        // ============================================
         function irParaModulo(moduleNum) {
             const tabs = document.querySelectorAll('.tab-btn');
             const modules = document.querySelectorAll('.module-content');
+            
             tabs.forEach(tab => tab.classList.remove('active'));
             modules.forEach(mod => mod.classList.remove('active'));
+            
             tabs[moduleNum - 1].classList.add('active');
             document.getElementById(`module${moduleNum}`).classList.add('active');
+            
+            // Scroll suave para o topo
             document.querySelector('.module-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
+        // ============================================
+        // FUNÇÃO PARA MARCAR VÍDEO COMO ASSISTIDO
+        // ============================================
         function marcarAssistido(videoNum, moduleNum) {
             let assistidos = JSON.parse(localStorage.getItem('videos_assistidos') || '[]');
             const videoKey = `video${videoNum}`;
+            
             if (!assistidos.includes(videoKey)) {
                 assistidos.push(videoKey);
                 localStorage.setItem('videos_assistidos', JSON.stringify(assistidos));
+                
+                // Atualizar badge do módulo
                 const badge = document.getElementById(`mod${moduleNum}Badge`);
                 if (badge) {
                     badge.innerHTML = '✅ Assistido';
                     badge.classList.add('completed');
                 }
+                
+                // Atualizar botão
                 const btn = event.target;
                 btn.innerHTML = '✅ Assistido';
                 btn.classList.add('completed');
+                
                 atualizarProgresso();
                 alert('✓ Vídeo marcado como assistido!');
             } else {
@@ -1108,15 +1128,21 @@
             }
         }
 
+        // ============================================
+        // FUNÇÃO PARA VERIFICAR QUIZ
+        // ============================================
         function verificarQuiz(moduleNum) {
             const quizDiv = document.getElementById(`quiz${moduleNum}`);
             const questions = quizDiv.querySelectorAll('.quiz-question');
             let acertos = 0;
-            questions.forEach((q, idx) => {
-                const selected = q.querySelector(`input[type="radio"]:checked`);
+            
+            questions.forEach((q) => {
+                const selected = q.querySelector('input[type="radio"]:checked');
                 const correctValue = q.dataset.correct;
+                
                 const options = q.querySelectorAll('.quiz-option');
                 options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+                
                 if (selected) {
                     if (selected.value === correctValue) {
                         acertos++;
@@ -1124,18 +1150,25 @@
                     } else {
                         selected.closest('.quiz-option').classList.add('incorrect');
                         const correctOption = q.querySelector(`input[value="${correctValue}"]`);
-                        if (correctOption) correctOption.closest('.quiz-option').classList.add('correct');
+                        if (correctOption) {
+                            correctOption.closest('.quiz-option').classList.add('correct');
+                        }
                     }
                 } else {
                     const correctOption = q.querySelector(`input[value="${correctValue}"]`);
-                    if (correctOption) correctOption.closest('.quiz-option').classList.add('correct');
+                    if (correctOption) {
+                        correctOption.closest('.quiz-option').classList.add('correct');
+                    }
                 }
             });
+            
             const feedback = document.getElementById(`quiz${moduleNum}Feedback`);
             feedback.style.display = 'block';
+            
             if (acertos === questions.length) {
                 feedback.innerHTML = '🎉 Parabéns! Você acertou todas as questões!';
                 feedback.className = 'quiz-feedback correct';
+                
                 let quizzes = JSON.parse(localStorage.getItem('quizzes_completos') || '[]');
                 if (!quizzes.includes(moduleNum)) {
                     quizzes.push(moduleNum);
@@ -1148,74 +1181,121 @@
             atualizarProgresso();
         }
 
+        // ============================================
+        // MINI-SIMULADOR DO MÓDULO 2
+        // ============================================
         function responderMiniSimulador(element, tipo) {
             const opcoes = document.querySelectorAll('#miniSimulador .mini-opcao');
             opcoes.forEach(opt => opt.classList.remove('selected'));
             element.classList.add('selected');
+            
             const feedbackDiv = document.getElementById('miniFeedback');
             feedbackDiv.style.display = 'block';
+            
             if (tipo === 'justoMeio') {
-                feedbackDiv.innerHTML = '✅ Correto! O equilíbrio entre a atenção à família e o uso do celular é o Justo Meio.';
+                feedbackDiv.innerHTML = '✅ Correto! O equilíbrio entre a atenção à família e o uso do celular é o Justo Meio. Você demonstrou phronesis!';
                 feedbackDiv.style.background = 'rgba(46, 204, 113, 0.1)';
                 feedbackDiv.style.color = '#2ecc71';
                 feedbackDiv.style.border = '1px solid #2ecc71';
+                
                 let mini = JSON.parse(localStorage.getItem('mini_simulador') || '[]');
-                if (!mini.includes('modulo2')) { mini.push('modulo2'); localStorage.setItem('mini_simulador', JSON.stringify(mini)); }
+                if (!mini.includes('modulo2')) {
+                    mini.push('modulo2');
+                    localStorage.setItem('mini_simulador', JSON.stringify(mini));
+                }
+            } else if (tipo === 'falta') {
+                feedbackDiv.innerHTML = '❌ Isolamento não é o ideal. Lembre-se: a sociabilidade é parte da natureza humana. O Justo Meio seria um equilíbrio.';
+                feedbackDiv.style.background = 'rgba(231, 76, 60, 0.1)';
+                feedbackDiv.style.color = '#e74c3c';
+                feedbackDiv.style.border = '1px solid #e74c3c';
             } else {
-                feedbackDiv.innerHTML = tipo === 'falta' ? '❌ Isolamento não é o ideal. O Justo Meio seria um equilíbrio.' : '⚠️ Excesso não é o ideal. O Justo Meio seria um equilíbrio.';
-                feedbackDiv.style.background = tipo === 'falta' ? 'rgba(231, 76, 60, 0.1)' : 'rgba(243, 156, 18, 0.1)';
-                feedbackDiv.style.color = tipo === 'falta' ? '#e74c3c' : '#f39c12';
-                feedbackDiv.style.border = `1px solid ${tipo === 'falta' ? '#e74c3c' : '#f39c12'}`;
+                feedbackDiv.innerHTML = '⚠️ Excesso não é o ideal. O Justo Meio seria um equilíbrio entre atenção à família e ao celular.';
+                feedbackDiv.style.background = 'rgba(243, 156, 18, 0.1)';
+                feedbackDiv.style.color = '#f39c12';
+                feedbackDiv.style.border = '1px solid #f39c12';
             }
             atualizarProgresso();
         }
 
+        // ============================================
+        // MINI-SIMULADOR DO MÓDULO 4 (TELA)
+        // ============================================
         function responderMiniSimuladorTela(element, tipo) {
             const opcoes = document.querySelectorAll('#miniSimuladorTela .mini-opcao');
             opcoes.forEach(opt => opt.classList.remove('selected'));
             element.classList.add('selected');
+            
             const feedbackDiv = document.getElementById('miniFeedbackTela');
             feedbackDiv.style.display = 'block';
+            
             if (tipo === 'ansiedade') {
                 feedbackDiv.innerHTML = '😰 A ansiedade de ficar desconectado é real, e isso é um sinal de dependência digital. Tente um "detox digital" gradual!';
                 feedbackDiv.style.background = 'rgba(231, 76, 60, 0.1)';
                 feedbackDiv.style.color = '#e74c3c';
+                feedbackDiv.style.border = '1px solid #e74c3c';
             } else if (tipo === 'curiosidade') {
-                feedbackDiv.innerHTML = '🤔 Que tal aceitar o desafio? Experimente ficar um dia sem celular e observe como se sente.';
+                feedbackDiv.innerHTML = '🤔 Que tal aceitar o desafio? Experimente ficar um dia sem celular e observe como se sente. Você pode se surpreender!';
                 feedbackDiv.style.background = 'rgba(52, 152, 219, 0.1)';
                 feedbackDiv.style.color = '#3498db';
+                feedbackDiv.style.border = '1px solid #3498db';
+                
                 let mini = JSON.parse(localStorage.getItem('mini_simulador') || '[]');
-                if (!mini.includes('modulo4')) { mini.push('modulo4'); localStorage.setItem('mini_simulador', JSON.stringify(mini)); }
+                if (!mini.includes('modulo4')) {
+                    mini.push('modulo4');
+                    localStorage.setItem('mini_simulador', JSON.stringify(mini));
+                }
             } else {
-                feedbackDiv.innerHTML = '😌 Que bom! Você já tem uma relação mais saudável com a tecnologia. Compartilhe suas estratégias no fórum!';
+                feedbackDiv.innerHTML = '😌 Que bom! Você já tem uma relação mais saudável com a tecnologia. Compartilhe suas estratégias com os colegas no fórum!';
                 feedbackDiv.style.background = 'rgba(46, 204, 113, 0.1)';
                 feedbackDiv.style.color = '#2ecc71';
+                feedbackDiv.style.border = '1px solid #2ecc71';
+                
                 let mini = JSON.parse(localStorage.getItem('mini_simulador') || '[]');
-                if (!mini.includes('modulo4')) { mini.push('modulo4'); localStorage.setItem('mini_simulador', JSON.stringify(mini)); }
+                if (!mini.includes('modulo4')) {
+                    mini.push('modulo4');
+                    localStorage.setItem('mini_simulador', JSON.stringify(mini));
+                }
             }
             atualizarProgresso();
         }
 
+        // ============================================
+        // FUNÇÃO PARA ATUALIZAR BARRA DE PROGRESSO
+        // ============================================
         function atualizarProgresso() {
             let videos = JSON.parse(localStorage.getItem('videos_assistidos') || '[]');
             let quizzes = JSON.parse(localStorage.getItem('quizzes_completos') || '[]');
             let mini = JSON.parse(localStorage.getItem('mini_simulador') || '[]');
-            let totalVideos = 4, totalQuizzes = 4, totalMini = 2;
+            
+            let totalVideos = 4;
+            let totalQuizzes = 4;
+            let totalMini = 2;
+            
             let progresso = videos.length + quizzes.length + mini.length;
             let totalItens = totalVideos + totalQuizzes + totalMini;
             let percentual = Math.min(100, Math.round((progresso / totalItens) * 100));
+            
             document.getElementById('progressPercent').innerHTML = `${percentual}%`;
             document.getElementById('progressFill').style.width = `${percentual}%`;
         }
 
+        // ============================================
+        // FUNÇÃO PARA CARREGAR ESTADOS SALVOS
+        // ============================================
         function carregarEstados() {
+            // Vídeos assistidos
             let videos = JSON.parse(localStorage.getItem('videos_assistidos') || '[]');
             for (let i = 1; i <= 4; i++) {
                 if (videos.includes(`video${i}`)) {
                     let badge = document.getElementById(`mod${i}Badge`);
-                    if (badge) { badge.innerHTML = '✅ Assistido'; badge.classList.add('completed'); }
+                    if (badge) {
+                        badge.innerHTML = '✅ Assistido';
+                        badge.classList.add('completed');
+                    }
                 }
             }
+            
+            // Quizzes completos
             let quizzes = JSON.parse(localStorage.getItem('quizzes_completos') || '[]');
             for (let i = 1; i <= 4; i++) {
                 if (quizzes.includes(i)) {
@@ -1227,18 +1307,40 @@
                     }
                 }
             }
+            
+            // Mini-simulador Módulo 2
             let mini = JSON.parse(localStorage.getItem('mini_simulador') || '[]');
             if (mini.includes('modulo2')) {
                 let fb = document.getElementById('miniFeedback');
-                if (fb) { fb.style.display = 'block'; fb.innerHTML = '✅ Mini-simulador concluído!'; fb.style.background = 'rgba(46, 204, 113, 0.1)'; fb.style.color = '#2ecc71'; }
+                if (fb) {
+                    fb.style.display = 'block';
+                    fb.innerHTML = '✅ Mini-simulador concluído! Você acertou o Justo Meio.';
+                    fb.style.background = 'rgba(46, 204, 113, 0.1)';
+                    fb.style.color = '#2ecc71';
+                    fb.style.border = '1px solid #2ecc71';
+                    
+                    // Marcar a opção correta como selecionada
+                    let opcaoCorreta = document.querySelector('#miniSimulador .mini-opcao[data-tipo="justoMeio"]');
+                    if (opcaoCorreta) opcaoCorreta.classList.add('selected');
+                }
             }
+            
+            // Mini-simulador Módulo 4
             if (mini.includes('modulo4')) {
                 let fb = document.getElementById('miniFeedbackTela');
-                if (fb) { fb.style.display = 'block'; fb.innerHTML = '✅ Mini-simulador concluído!'; fb.style.background = 'rgba(46, 204, 113, 0.1)'; fb.style.color = '#2ecc71'; }
+                if (fb) {
+                    fb.style.display = 'block';
+                    fb.innerHTML = '✅ Mini-simulador concluído! Você refletiu sobre seu uso da tecnologia.';
+                    fb.style.background = 'rgba(46, 204, 113, 0.1)';
+                    fb.style.color = '#2ecc71';
+                    fb.style.border = '1px solid #2ecc71';
+                }
             }
+            
             atualizarProgresso();
         }
 
+        // Inicializar
         carregarEstados();
     </script>
 </body>
